@@ -10,3 +10,5 @@ os.system("cmake ..")
 
 if (os.sys.platform == "win32"):
     os.system("msbuild Do_Scripting.sln")
+else:
+    os.system("make")
