@@ -7,6 +7,8 @@ homepath = os.path.abspath(os.path.dirname(__file__) + "/..")
 execpath = homepath + "/build"
 if (os.sys.platform == "win32"):
     execpath += "/Debug/Do.exe"
+else:
+    execpath += "/Do"
 
 print ("Running " + execpath)
 os.system(execpath)
