@@ -1,11 +1,14 @@
 import os
+import sys
 
-os.system("python " + os.path.dirname(__file__) + "/build.py")
+err = os.system("python " + os.path.dirname(__file__) + "/build.py")
+if (err != 0):
+    sys.exit(1)
 
 homepath = os.path.abspath(os.path.dirname(__file__) + "/..")
 
 execpath = homepath + "/build"
-if (os.sys.platform == "win32"):
+if (sys.platform == "win32"):
     execpath += "/Debug/Do.exe"
 else:
     execpath += "/core/Do"
