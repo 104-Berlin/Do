@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project (test_plugin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../plugins)
+file(GLOB_RECURSE SRC_FILES src/*.c)
+add_library(test_plugin MODULE ${SRC_FILES})
+SET_TARGET_PROPERTIES(test_plugin PROPERTIES PREFIX "lib")
