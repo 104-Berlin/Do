@@ -8,4 +8,4 @@
  * 
  * 
  */
-extern do_err do_load_plugin(const char* plugin_name);
+extern do_err do_load_plugin(const char* plugin_name, t_load_fn* oFn);

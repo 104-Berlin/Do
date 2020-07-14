@@ -1,11 +1,10 @@
 #include "prefix.h"
 
-int main()
+int main(int argc, char** argv)
 {
-    DO_SUCCEED(do_load_plugin("../../plugins/test_plugin.so"),
-        printf("Succeed\n");
+    t_load_fn loadFn;
+    DO_SUCCEED(do_load_plugin("/Users/lucaherzke/Documents/DEV/Do/plugins/libtest_plugin.so", &loadFn),
+        loadFn();
     )
-
-    printf("Hello World\n");
     return 0;
 }
