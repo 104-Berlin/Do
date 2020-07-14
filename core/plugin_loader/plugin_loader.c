@@ -22,7 +22,7 @@ do_err do_load_plugin_func(t_do_plugin plugin, const char* plugin_name, t_load_f
     t_load_fn load_function = (t_load_fn) dlsym(plugin, DO_LOAD_PLUGIN_FUNCTION_NAME);
     if (!load_function) { fprintf(stderr, "%s\n", dlerror()); return DO_NO_LOAD_FN; }
     *o_func = load_function;
-    //TODO Add other platforms
+    //TODO: Add other platforms
     #endif
 
 
