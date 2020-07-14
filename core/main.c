@@ -1,23 +1,13 @@
 #include "prefix.h"
 
-do_err dummyFunction()
+int main(int argc, char** argv)
 {
-    return DO_ANYERROR;
-}
-
-do_err testFn()
-{
-    return DO_NOERROR;
-}
-
-int main()
-{
-    DO_SUCCEED(dummyFunction(), 
-        DO_SUCCEED(testFn(),
-            printf("Succeded!\n");
+    t_do_plugin test_plugin;
+    DO_SUCCEED(do_load_plugin("/Users/lucaherzke/Documents/DEV/Do/plugins/libtest_plugin.so", &test_plugin),
+        t_load_fn load_func;
+        DO_SUCCEED(do_load_plugin_func(test_plugin, DO_LOAD_PLUGIN_FUNCTION_NAME, &load_func),
+            load_func();
         )
     )
-
-    printf("Hello World\n");
     return 0;
 }
