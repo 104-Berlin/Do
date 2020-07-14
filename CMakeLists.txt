@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 include_directories(core)
 
-if(Win32)
+if(WIN32)
     # IF WINDOWS
     add_definitions(-D_WIN)
 elseif(UNIX)
@@ -13,7 +13,7 @@ else()
     # IF LINUX
     add_definitions(-D_LIN)
 endif(APPLE)
-endif(Win32)
+endif(WIN32)
 
 
 project(Do_Scripting)
