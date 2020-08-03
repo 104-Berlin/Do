@@ -8,7 +8,7 @@
  * @param plugin_name The file path to the dynamic lib
  * 
  */
-extern do_err do_load_plugin(const char* plugin_name, t_do_plugin* o_plugin);
+extern do_err do_load_plugin(const car* plugin_name, t_do_plugin* o_plugin);
 
 
 /**
@@ -21,4 +21,4 @@ extern do_err do_load_plugin(const char* plugin_name, t_do_plugin* o_plugin);
  * 
  * @return o_func The return function. Currently void()
  * */
-extern do_err do_load_plugin_func(t_do_plugin plugin, const char* function_name, t_load_fn* o_func);
+extern do_err do_load_plugin_func(t_do_plugin plugin, const car* function_name, t_load_fn* o_func);
