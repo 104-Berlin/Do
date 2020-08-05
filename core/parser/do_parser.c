@@ -40,19 +40,20 @@ do_err parse_file(const car* file_path)
         return DO_ERR_FILE_NOT_FOUND;
     }
 
-    car* current_char;
-    car* prev_char;
+    car current_char;
+    car prev_char;
     while ((current_char = fgetc(file)) != EOF)
     {
         DO_SUCCEED(process_char(current_char, prev_char),);
     }
+    return DO_NOERROR;
 }
 
-do_err process_char(car* current_char, car* previous_char)
+do_err process_char(car current_char, car previous_char)
 {
     if (isalpha(current_char))
     {
         current_char = tolower(current_char);
     }
-    
+    return DO_NOERROR;
 }  
